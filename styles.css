@@ -1,0 +1,13 @@
+body {
+    background-color: green;
+} 
+#cardBody {
+    background-color: white;
+    width: 275px;
+    height: 400px;
+    border-radius: 12px;
+    margin: auto;
+}
+#cardIcon{
+    
+}
