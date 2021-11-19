@@ -1,29 +1,39 @@
 //Math function
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
+function getRandomArbitrary(length) {
+    return Math.random() * (length)
 }
 
 function buildACard() {
     //Shapes and numbers on card
-    const suits = ['♦', '♥', '♠', '♣'];
-    const cardValueArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'A', 'Q', 'K', 'J'];
+    let suits = ['♦', '♥', '♠', '♣'];
+    let cardValueArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'A', 'Q', 'K', 'J'];
 
     //Card index and value
-    const cardIndex = getRandomArbitrary(0,cardValueArray.length-1);
-    const theCardValue = cardValueArray[cardIndex];
-
+    let cardIndex = Math.floor(getRandomArbitrary(cardValueArray.length));
+    let theCardValue = cardValueArray[cardIndex];
     //Suit index and value
-    const suitIndex = getRandomArbitrary(0, suits.length - 1);
-    const suitValue = suits[suitIndex];
+    let suitIndex = Math.floor(getRandomArbitrary(suits.length));
+    let suitValue = suits[suitIndex];
+
+    let changeColor = ""
+    if (suitValue == '♦' || suitValue == '♥') {
+        changeColor = "red"
+    }
 
     //HTML links
- 
-    const suitSlot = document.getElementById('cardIcon')
-    const cardValueSlot = document.getElementById('theCardValue')
-    const suitsSlot2 = document.getElementById('cardIconUpsideDown')
-    
-    
+    let suitSlot = document.querySelector('#cardIcon')
+    let cardValueSlot = document.querySelector('#theCardValue')
+    let suitsSlot2 = document.querySelector('#cardIconUpsideDown')
+
+    if (changeColor == "red"){
+        suitSlot.classList.add("red")
+        suitsSlot2.classList.add("red")
+    }
+
     suitSlot.innerHTML = suitValue;
     cardValueSlot.innerHTML = theCardValue;
     suitsSlot2.innerHTML = suitValue;
+}
+window.onload = function () {
+    buildACard()
 }

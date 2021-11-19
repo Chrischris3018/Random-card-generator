@@ -3,11 +3,25 @@ body {
 } 
 #cardBody {
     background-color: white;
-    width: 275px;
-    height: 400px;
+    width: 550px;
+    height: 800px;
     border-radius: 12px;
     margin: auto;
+    display: flex;
+    font-size: 200px;
 }
 #cardIcon{
-    
+    margin-right: auto;
+}
+#theCardValue{
+    justify-content: center;
+    margin: auto;
+}
+#cardIconUpsideDown{
+    margin-left: auto;
+    align-self: flex-end;
+    transform: scaleY(-1);
+}
+.red{
+    color: red
 }
